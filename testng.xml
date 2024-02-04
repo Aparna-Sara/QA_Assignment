@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <listeners>
+        <listener class-name="com.assignment.test.ExtentReportListener"/>
+    </listeners>
+    <test name="PrimeRangeTest">
+        <classes>
+            <class name="com.assignment.test.PrimeNumberTest"/>
+        </classes>
+    </test>
+</suite>
