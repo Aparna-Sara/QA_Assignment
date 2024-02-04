@@ -10,7 +10,6 @@ This repository contains a data-driven testing project for prime number detectio
 - [Setup](#setup)
 - [How to Run](#how-to-run)
 - [Test Reports](#test-reports)
-- [Issues and Contributions](#issues-and-contributions)
 
 ## Introduction
 
@@ -28,12 +27,25 @@ The project is structured as follows:
 
 ## Setup
 
-Make sure you have the following tools installed:
+1. **Java Development Kit (JDK):**
+   - Make sure you have Java Development Kit (JDK) installed. You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase-downloads.html).
 
-- Java Development Kit (JDK): openjdk version "16.0.1"
-- Apache Maven
+2. **Apache Maven:**
+   - Ensure Apache Maven is installed. You can download it from [Maven's official website](https://maven.apache.org/download.cgi).
 
-Clone the repository:
+3. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Aparna-Sara/QA_Assignment.git
 
-```bash
-git clone https://github.com/Aparna-Sara/QA_Assignment.git
+## How to Run
+
+1. Navigate to the Project Directory:
+cd QA_Assignment
+
+2. Run Tests:
+Execute the following Maven command to run the tests
+mvn clean test
+
+## Test Reports
+
+After running the tests, you can find the test reports in the 'target' directory. Open the report to view detailed test results.
