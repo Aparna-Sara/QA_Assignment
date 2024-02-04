@@ -30,7 +30,7 @@ The project is structured as follows:
 
 Make sure you have the following tools installed:
 
-- Java Development Kit (JDK)
+- Java Development Kit (JDK): openjdk version "16.0.1"
 - Apache Maven
 
 Clone the repository:
