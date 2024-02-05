@@ -33,7 +33,11 @@ public class ExtentReportListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        extentTest.get().log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " - Test Skipped", ExtentColor.YELLOW));
+        if (extentTest.get() != null) {
+            extentTest.get().log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " - Test Skipped", ExtentColor.YELLOW));
+        } else {
+            System.out.println(result.getName() + " - Test Skipped");
+        }
     }
 
     @Override

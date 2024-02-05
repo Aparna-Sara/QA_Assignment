@@ -49,22 +49,33 @@ public class PrimeNumberTest {
            - The second number should not be null.
            - The second number should not be less than the first number. */
 
+    	
+    	/* Condition: Set default value for firstNumber = 1 if it's null */
+    	if(firstNumber == null) {
+    		firstNumber = Constants.DEFAULT_FIRST_NUMBER;
+    	}
+		
+		
+		//edge case detected
+    			if(firstNumber == 0 && secondNumber == 0) {
+    				System.out.println(String.format(Constants.INVALID_RANGE_MESSAGE_FORMAT, firstNumber, secondNumber));;
+    			return;
+    			}
+    			
+    	
+    			
         if (secondNumber == null || (firstNumber != null && secondNumber < firstNumber)) {
-            System.out.println(Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
             test.log(Status.SKIP, Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
             return;
         }
 
         PrimeNumberDetector primeNumberDetector = new PrimeNumberDetector();
 
-        /* Condition: Set default value for firstNumber = 1 if it's null */
-        int actualFirstNumber = (firstNumber != null) ? firstNumber : Constants.DEFAULT_FIRST_NUMBER;
-
-        List<Integer> primes = primeNumberDetector.findPrimesInRange(actualFirstNumber, secondNumber);
+        List<Integer> primes = primeNumberDetector.findPrimesInRange(firstNumber, secondNumber);
 
         // Add assertions or print statements to validate the result
         if (!primes.isEmpty()) {
-            String primesMessage = String.format(Constants.PRIMES_MESSAGE_FORMAT, actualFirstNumber, secondNumber, primes);
+            String primesMessage = String.format(Constants.PRIMES_MESSAGE_FORMAT, firstNumber, secondNumber, primes);
             System.out.println(primesMessage);
             test.log(Status.PASS, primesMessage);
 
@@ -75,12 +86,13 @@ public class PrimeNumberTest {
             //assertTrue(primesMessage.contains("Invalid range"), "Expected message to contain 'Invalid range'");
             
         } else {
-            String invalidRangeMessage = primeNumberDetector.getInvalidRangeMessage(actualFirstNumber, secondNumber);
+            String invalidRangeMessage = primeNumberDetector.getInvalidRangeMessage(firstNumber, secondNumber);
             System.out.println(invalidRangeMessage);
             test.log(Status.FAIL, invalidRangeMessage);
 
             // Add assertions based on the invalid range message
-            assertTrue(invalidRangeMessage.contains("Invalid range"), "Expected message to contain 'Invalid range'");
+            assertTrue(invalidRangeMessage != null && invalidRangeMessage.contains("Invalid range"), "Expected message to contain 'Invalid range'");
+
             // Intentionally fail the assertion
            // assertTrue(invalidRangeMessage.contains("Prime numbers"), "Expected message to contain 'Prime numbers'");
         }

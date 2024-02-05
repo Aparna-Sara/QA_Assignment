@@ -19,11 +19,12 @@ public class PrimeNumberDetector {
 		List<Integer> primes = new ArrayList<>();
 
 		// Check for invalid range
-		if (firstNumber < Constants.DEFAULT_FIRST_NUMBER || secondNumber <= firstNumber) {
+		if (secondNumber < firstNumber) {
 			// Invalid range
 			return primes;
 		}
 
+		
 		// Iterate through the range and add prime numbers to the list
 		for (Integer number = firstNumber; number <= secondNumber; number++) {
 			if (isPrime(number)) {
@@ -42,11 +43,11 @@ public class PrimeNumberDetector {
 	 * @return The error message for an invalid range.
 	 */
 	public String getInvalidRangeMessage(Integer firstNumber, Integer secondNumber) {
-		 if (firstNumber.equals(secondNumber)) {
-	            return Constants.INVALID_EQUAL_RANGE_MESSAGE;
-	        }
+		 if (secondNumber == null || (firstNumber != null && secondNumber < firstNumber)) {
+		        return String.format(Constants.INVALID_RANGE_MESSAGE_FORMAT, firstNumber, secondNumber);
+		    }
 
-	        return String.format(Constants.INVALID_RANGE_MESSAGE_FORMAT, firstNumber, secondNumber);
+		    return null; 
 	    }
 
 	/**

@@ -17,6 +17,15 @@ public class TestDataProvider {
 	public Object[][] testData(){
 		return new Object[][] {
 			
+			// condition - convert null to 1
+			{null, 20},
+									
+			// Invalid range: null values
+			{null, null},
+						
+			// Invalid range: second number is null
+			{4, null},
+						
 			// Valid range with prime numbers
 			{5, 100},
 			
@@ -26,25 +35,28 @@ public class TestDataProvider {
 			// Valid range with prime numbers
 			{10, 200},
 			
-			// condition - convert null to 1
-			{null, 20},
-						
-			// Invalid range: null values
-			{null, null},
+			// Valid range with prime numbers
+			{20, 25},
+			
+			// Valid range with prime numbers
+			{5, 5},
+			
+			// Valid range with prime numbers
+			{88, 1000},
 			
 			// Invalid range: both numbers < 1
 			{0, 0},
 			
+			// Invalid range: second number 0
+			{9, 0},
+						
 			// Invalid range: first number < 1
 			{0, 7},
 			
-			// Invalid range: second number is null
-			{4, null},
-			
 			// Invalid range: second number is less than the first number
 			{3, 1},
-			
-			// Invalid range: second number is equal to first number
+		
+			// Valid range: second number is equal to first number
 			{13, 13},
 						
 			// Invalid range: negative first number
@@ -56,8 +68,8 @@ public class TestDataProvider {
 			// Invalid range: negative first number
 			{-333, 10},
 			
-			// Valid range with prime numbers
-			{88, 1000},
+			// Invalid range: negative first number
+			{-30, 20},
 			
 			// Invalid range: negative number for both
 			{-6, -15},
