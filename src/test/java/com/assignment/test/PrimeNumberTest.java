@@ -55,17 +55,23 @@ public class PrimeNumberTest {
     		firstNumber = Constants.DEFAULT_FIRST_NUMBER;
     	}
 		
-		
+    	if(firstNumber == 0 && secondNumber == null) {
+    		System.out.println(Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
+    		test.log(Status.SKIP, Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
+            return;
+    	}
 		//edge case detected
     			if(firstNumber == 0 && secondNumber == 0) {
     				System.out.println(String.format(Constants.INVALID_RANGE_MESSAGE_FORMAT, firstNumber, secondNumber));;
-    			return;
+    				test.log(Status.SKIP, Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
+    				return;
     			}
     			
     	
     			
         if (secondNumber == null || (firstNumber != null && secondNumber < firstNumber)) {
-            test.log(Status.SKIP, Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
+        	System.out.println(Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
+        	test.log(Status.SKIP, Constants.INVALID_SECOND_NUMBER_RANGE_MESSAGE);
             return;
         }
 

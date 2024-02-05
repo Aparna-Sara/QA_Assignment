@@ -73,6 +73,36 @@ public class TestDataProvider {
 			
 			// Invalid range: negative number for both
 			{-6, -15},
+			
+			// Invalid range: negative number for both
+			{0, -2},
+		
+			//Edge cases
+			{null, 5},
+			{1,6},
+			{-2,9},
+			{3,null},
+			{null,0},
+			{0,null},
+			{null, -1},
+			{-1,null},
+			{1,-4},
+			{3,0},
+			{5,3},
+			{-5,5},
+			{0,1},
+			{0,2},
+			{1,0},
+			{1,1},
+			{1,2},
+			{2,2},
+			{2,3},
+			{-0,-0},
+			{1000, null},
+//			{null, 1000000},
+		//	{99999, 9999999},
+		//	{1000000,2000000},
+		
 		};
 	}
 }

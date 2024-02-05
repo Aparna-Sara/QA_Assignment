@@ -47,7 +47,8 @@ public class PrimeNumberDetector {
 		        return String.format(Constants.INVALID_RANGE_MESSAGE_FORMAT, firstNumber, secondNumber);
 		    }
 
-		    return null; 
+		   // return null; 
+		   return String.format(Constants.INVALID_RANGE_MESSAGE_FORMAT, firstNumber, secondNumber);
 	    }
 
 	/**
